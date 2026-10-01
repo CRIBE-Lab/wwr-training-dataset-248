@@ -18,5 +18,12 @@ data/image001.png
 data/image001.json
 ```
 
-图像与同名 JSON 一一对应。JSON 中的多边形可转换为语义分割掩膜。仓库不包含训练密钥、云服务凭据或运行日志。
+## 下载与校验
 
+```bash
+gh release download v1.0.0 --repo Aspartame-yao/wwr-training-dataset-248
+shasum -a 256 -c RELEASE_ASSETS.sha256
+for file in *part-*.tar; do tar -xf "$file"; done
+```
+
+图像与同名 JSON 一一对应。JSON 中的多边形可转换为语义分割掩膜。仓库不包含训练密钥、云服务凭据或运行日志。
